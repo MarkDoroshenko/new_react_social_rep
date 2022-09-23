@@ -1,33 +1,24 @@
 .bodyWrapper{
-
+  min-height: 100%;
+  background-color: ivory;
 }
 .app-wrapper{
-  max-width: 1220px;
-  padding: 0 10px;
+
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 1050px;
   margin: 0 auto;
-}
-.header{
-  width: 100%;
-  background-color: aliceblue;
-  margin-bottom: 15px;
-}
-.logoImg{
-  max-height: 130px;
+
+
 }
 .mainBlock {
   display: flex;
+  flex-grow: 1;
+  margin-bottom: 15px;
 }
-.nav{
-  background-color: green;
-  min-width: 220px;
-}
-.content{
-  background-color: burlywood;
-  width: 100%;
-  margin-left: 15px;
 
-}
-.contentImg{
-  width: 100%;
-  height: 300px;
+.navBar-wrapper{
+
 }

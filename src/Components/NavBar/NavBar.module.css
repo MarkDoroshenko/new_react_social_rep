@@ -1,0 +1,18 @@
+
+.nav{
+  background-color: green;
+  min-width: 220px;
+  min-height: 100%;
+}
+.navItem{
+  padding: 15px;
+}
+
+.item {
+  color: whitesmoke;
+  font-size: 20px;
+}
+.active {
+  color: gold;
+  font-size: 25px;
+}
