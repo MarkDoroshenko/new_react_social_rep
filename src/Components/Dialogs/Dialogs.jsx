@@ -23,15 +23,16 @@ const getClassName = ( dialogIt ) => {
 }
 
 const Dialogs = ( props ) => {
-    let dialogsData = [
-        { id: 1, name: 'Alex?' },
-        { id: 2, name: "Igor?" },
+    let dialogs = [
+        { id: 1, name: 'Alex' },
+        { id: 2, name: "Igor" },
         { id: 3, name: 'Joseph' },
         { id: 4, name: "Kiril" },
         { id: 5, name: 'Natali' },
         { id: 6, name: "Kate" },
     ]
-    let messagesData = [
+
+    let messages = [
         { id: 1, message: 'Hi!' },
         { id: 2, message: "What's up?" },
         { id: 3, message: 'Not bad, thanks.' },
@@ -39,24 +40,16 @@ const Dialogs = ( props ) => {
         { id: 5, message: "What's up?" },
         { id: 6, message: "Not bad, thanks." },
     ]
+    let dialogsElements = dialogs.map( dialog => <DialogItem id={ dialog.id } name={ dialog.name }/> )
+    let messagesElements = messages.map( message =>  <Message message={ message.message }/>)
 
     return (
         <Wrapper className={ classes.dialogs }>
             <div className={ classes.dialogItems }>
-                <DialogItem id={ dialogsData[0].id } name={ dialogsData[0].name }/>
-                <DialogItem id={ dialogsData[1].id } name={ dialogsData[1].name }/>
-                <DialogItem id={ dialogsData[2].id } name={ dialogsData[2].name }/>
-                <DialogItem id={ dialogsData[3].id } name={ dialogsData[3].name }/>
-                <DialogItem id={ dialogsData[4].id } name={ dialogsData[4].name }/>
-                <DialogItem id={ dialogsData[5].id } name={ dialogsData[5].name }/>
+                { dialogsElements }
             </div>
             <div className={ classes.messages }>
-                <Message message={ messagesData[0].message }/>
-                <Message message={ messagesData[1].message }/>
-                <Message message={ messagesData[2].message }/>
-                <Message message={ messagesData[3].message }/>
-                <Message message={ messagesData[4].message }/>
-                <Message message={ messagesData[5].message }/>
+                { messagesElements }
             </div>
         </Wrapper>
     )
