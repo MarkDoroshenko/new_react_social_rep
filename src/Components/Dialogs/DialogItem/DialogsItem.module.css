@@ -1,0 +1,11 @@
+.dialogItemWrapper{
+    padding: 10px;
+    text-align: center;
+}
+.dialog {
+    color: gainsboro;
+}
+
+.active {
+    color: goldenrod;
+}

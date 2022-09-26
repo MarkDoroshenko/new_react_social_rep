@@ -9,23 +9,27 @@ import Music from './Components/Music/Music';
 import News from './Components/News/News';
 import Settings from './Components/Settings/Settings';
 import Footer from './Components/Footer/Footer';
+import MyFriends from './Components/My friends/MyFriends';
 
-const App = () => {
+
+const App = ( props ) => {
+
     return (
         <div className='bodyWrapper'>
             <div className='app-wrapper'>
                 <Header/>
                 <div className='mainBlock'>
-                    <div className='navBar-wrapper'>
-                        <NavBar/>
+                    <div className='navBarWrapper'>
+                        <NavBar />
                     </div>
                     <div className='appContentWrapper'>
                         <Routes>
-                            <Route path="/profile" element={<Profile/>}/>
-                            <Route path="/dialogs/*" element={<Dialogs/>}/>
-                            <Route path="/news" element={<News/>}/>
-                            <Route path="/music" element={<Music/>}/>
-                            <Route path="/settings" element={<Settings/>}/>
+                            <Route path="/profile" element={ <Profile state={ props.state.profilePage }/> }/>
+                            <Route path="/dialogs/*" element={ <Dialogs state={ props.state.messagesPage }/> }/>
+                            <Route path="/news" element={ <News/> }/>
+                            <Route path="/music" element={ <Music/> }/>
+                            <Route path="/settings" element={ <Settings/> }/>
+                            <Route path="/friends" element={ <MyFriends state={ props.state.myFriendsPage }/> }/>
                         </Routes>
                     </div>
                 </div>

@@ -4,11 +4,14 @@ import MyPosts from './My_posts/MyPosts';
 import Wrapper from '../ContentWrapper/ContentWrapper';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
-const Profile = () => {
+
+
+const Profile = (props) => {
+
     return (
         <Wrapper className={ classes.content }>
-            <ProfileInfo/>
-            <MyPosts/>
+            <ProfileInfo />
+            <MyPosts posts={props.state.posts}/>
         </Wrapper>
     )
 }

@@ -1,29 +1,18 @@
-.dialogs {
+.messagesPageWrapper {
     display: flex;
-    background-color: burlywood;
+    background-color: darkslategray;
     width: 100%;
-    margin-left: 15px;
 }
 
-.dialogItems {
-    width: 100px;
-    border-right: 2px solid white;
-}
-.dialogWrapper{
-    padding: 20px;
-}
-.dialog {
-    color: black;
-}
-
-.active {
-    color: cyan;
+.dialogs {
+    flex: 0 0 100px;
+    border-right: 3px solid white;
 }
 
 .messages {
-    flex-grow: 1;
+    flex: 1 1 auto;
+    background-color: seagreen;
+    width: 100%;
+
 }
 
-.message {
-    padding: 10px;
-}
