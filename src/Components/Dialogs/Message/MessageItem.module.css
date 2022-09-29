@@ -21,7 +21,7 @@
 
 .avatarToRight {
     flex-grow: 1;
-
+color: lightgrey;
     padding: 0 5px;
     text-align: right;
 }

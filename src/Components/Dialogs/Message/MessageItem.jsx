@@ -3,37 +3,37 @@ import classes from './MessageItem.module.css'
 
 
 const MessageItem = ( props ) => {
-    if (props.name === 'You'){
+    if ( props.name === 'You' ) {
         return (
             <div className={ classes.message }>
-            <div className={classes.avatarToRight}>
-                { props.message }
-            </div>
-            <div className={classes.avatarBlock}>
-                <div>
-                    <img className={classes.avatarImgDialog} src={ props.avatar } alt='avatar'/>
+                <div className={ classes.avatarToRight }>
+                    { props.message }
                 </div>
-                <div className={classes.name}>
-                    { props.name }
+                <div className={ classes.avatarBlock }>
+                    <div>
+                        <img className={ classes.avatarImgDialog } src={ props.avatar } alt='avatar'/>
+                    </div>
+                    <div className={ classes.name }>
+                        { props.name }
+                    </div>
                 </div>
             </div>
-        </div>
         )
-    }
-    else return (
+    } else return (
         <div className={ classes.message }>
-            <div className={classes.avatarBlock}>
+            <div className={ classes.avatarBlock }>
                 <div>
-                    <img className={classes.avatarImgDialog} src={ props.avatar } alt='avatar'/>
+                    <img className={ classes.avatarImgDialog } src={ props.avatar } alt='avatar'/>
                 </div>
-                <div className={classes.name}>
+                <div className={ classes.name }>
                     { props.name }
                 </div>
             </div>
-            <div className={classes.messageBlock}>
+            <div className={ classes.messageBlock }>
                 { props.message }
             </div>
         </div>
+
     )
 }
 

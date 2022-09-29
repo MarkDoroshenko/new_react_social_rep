@@ -13,23 +13,34 @@ import MyFriends from './Components/My friends/MyFriends';
 
 
 const App = ( props ) => {
-
     return (
         <div className='bodyWrapper'>
             <div className='app-wrapper'>
                 <Header/>
                 <div className='mainBlock'>
                     <div className='navBarWrapper'>
-                        <NavBar />
+                        <NavBar/>
                     </div>
                     <div className='appContentWrapper'>
                         <Routes>
-                            <Route path="/profile" element={ <Profile state={ props.state.profilePage }/> }/>
-                            <Route path="/dialogs/*" element={ <Dialogs state={ props.state.messagesPage }/> }/>
+                            <Route path="/profile" element={
+                                <Profile
+                                    profilePage={ props.state.profilePage }
+                                    dispatch={ props.dispatch }/>
+                            }/>
+                            <Route path="/dialogs/*" element={
+                                <Dialogs
+                                    state={ props.state.messagesPage }
+                                    dispatch={ props.dispatch }/>
+                            }/>
                             <Route path="/news" element={ <News/> }/>
                             <Route path="/music" element={ <Music/> }/>
                             <Route path="/settings" element={ <Settings/> }/>
-                            <Route path="/friends" element={ <MyFriends state={ props.state.myFriendsPage }/> }/>
+                            <Route path="/friends" element={
+                                <MyFriends
+                                    state={ props.state.myFriendsPage }
+                                />
+                            }/>
                         </Routes>
                     </div>
                 </div>
