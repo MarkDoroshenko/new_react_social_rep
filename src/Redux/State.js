@@ -1,8 +1,6 @@
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const ADD_MESSAGE = 'ADD-MESSAGE'
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
-
+import profileReducer from './profileReducer';
+import messagesReducer from './messagesReducer';
+import myFriendsReducer from './myFriendsReducer';
 
 let store = {
     _state: {
@@ -95,44 +93,12 @@ let store = {
     },
 
     dispatch( action ) {
-        if ( action.type === 'ADD-POST' ) {
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostTextIn,
-                likesCount: 6,
-            };
-            this._state.profilePage.posts.push( newPost );
-            this._state.profilePage.newPostTextIn = '';
-            this._callSubscriber( this._state );
-
-        } else if ( action.type === 'UPDATE-NEW-POST-TEXT' ) {
-            this._state.profilePage.newPostTextIn = action.newText;
-            this._callSubscriber( this._state );
-
-        } else if ( action.type === 'ADD-MESSAGE' ) {
-            let newMessage = {
-                id: 7,
-                message: this._state.messagesPage.newMessageTextIn,
-                name: 'You',
-                avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYUfbUNJrtXWHm5PrsKkvgbSm2XaRgX4tVhg&usqp=CAU',
-            };
-            this._state.messagesPage.messages.push( newMessage );
-            this._state.messagesPage.newMessageTextIn = '';
-            this._callSubscriber( this._state );
-
-        } else if ( action.type === 'UPDATE-NEW-MESSAGE-TEXT' ) {
-            this._state.messagesPage.newMessageTextIn = action.newText;
-            this._callSubscriber( this._state );
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.messagesPage = messagesReducer(this._state.messagesPage, action);
+        this._state.myFriendsPage = myFriendsReducer(this._state.myFriendsPage, action);
+        this._callSubscriber( this._state );
     }
 }
-
-export const addPostCreator = () => ({ type: ADD_POST })
-export const updateNewPostTextCreator = ( text ) => ({ type: UPDATE_NEW_POST_TEXT, newText: text })
-
-export const addMessageCreator = () => ({type: ADD_MESSAGE})
-export const onMessageChangeCreator = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text})
-
 
 export default store;
 window.store = store;
