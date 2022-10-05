@@ -1,6 +1,12 @@
+@import './Styles/variables';
+
 .bodyWrapper{
   min-height: 100%;
-  background-color: ivory;
+  background-color: $app-background;
+  width: 100vw;
+}
+.appContentWrapper{
+  display: contents;
 }
 
 .app-wrapper{
