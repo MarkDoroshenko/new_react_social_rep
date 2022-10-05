@@ -1,0 +1,31 @@
+@import './variables';
+
+@mixin listScrollbar() {
+  scrollbar-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
+  &::-webkit-scrollbar-track {
+    background-color: $app-background;
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: $app-background;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: $app-background;
+  }
+
+  &:hover {
+    scrollbar-width: thin;
+    scrollbar-color: #b0b0b0 rgba(0, 0, 0, 0);
+  }
+  &:hover::-webkit-scrollbar {
+    width: 6px;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    min-height: 48px;
+    background-color: #b0b0b0;
+  }
+}
