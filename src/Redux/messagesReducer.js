@@ -20,37 +20,37 @@ let initialState = {
     ],
     messages: [
         {
-            id: 1,
+            id: 0,
             message: 'Hi!',
             name: 'Kate',
             avatar: "https://content.freelancehunt.com/cdn-cgi/image/format=auto,width=800,dpr=1/snippet/34ada/e9b03/1167943/23FF6C39-7655-437B-A8A8-00C64163CC37.jpeg"
         },
         {
-            id: 2,
+            id: 1,
             message: 'Hey!)',
             name: 'You',
             avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYUfbUNJrtXWHm5PrsKkvgbSm2XaRgX4tVhg&usqp=CAU'
         },
         {
-            id: 3,
+            id: 2,
             message: "What's up?",
             name: 'Kate',
             avatar: "https://content.freelancehunt.com/cdn-cgi/image/format=auto,width=800,dpr=1/snippet/34ada/e9b03/1167943/23FF6C39-7655-437B-A8A8-00C64163CC37.jpeg"
         },
         {
-            id: 4,
+            id: 3,
             message: 'Not bad, thanks, and what about you?',
             name: 'You',
             avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYUfbUNJrtXWHm5PrsKkvgbSm2XaRgX4tVhg&usqp=CAU'
         },
         {
-            id: 5,
+            id: 4,
             message: "I'm fine too, wanna meet me today?",
             name: 'Kate',
             avatar: "https://content.freelancehunt.com/cdn-cgi/image/format=auto,width=800,dpr=1/snippet/34ada/e9b03/1167943/23FF6C39-7655-437B-A8A8-00C64163CC37.jpeg"
         },
         {
-            id: 6,
+            id: 5,
             message: "Why not) Great idea!",
             name: 'You',
             avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYUfbUNJrtXWHm5PrsKkvgbSm2XaRgX4tVhg&usqp=CAU'
@@ -68,7 +68,7 @@ const messagesReducer = ( state = initialState, action ) => {
             };
         case ADD_MESSAGE:
             let newMessage = {
-                id: state.messages.length + 1,
+                id: state.messages.length,
                 message: state.newMessageTextIn,
                 name: 'You',
                 avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYUfbUNJrtXWHm5PrsKkvgbSm2XaRgX4tVhg&usqp=CAU',

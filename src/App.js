@@ -10,6 +10,7 @@ import Settings from './Components/Settings/Settings';
 import Footer from './Components/Footer/Footer';
 import MyFriends from './Components/My friends/MyFriends';
 import DialogsContainer from './Components/Dialogs/DialogsContainer';
+import UsersContainer from './Components/Users/usersContainer';
 
 
 const App = ( props ) => {
@@ -23,12 +24,9 @@ const App = ( props ) => {
                     </div>
                     <div className='appContentWrapper'>
                         <Routes>
-                            <Route path="/profile" element={
-                                <Profile />
-                            }/>
-                            <Route path="/dialogs/*" element={
-                                <DialogsContainer />
-                            }/>
+                            <Route path="/profile" element={ <Profile /> }/>
+                            <Route path="/dialogs/*" element={ <DialogsContainer /> }/>
+                            <Route path="/users" element={ <UsersContainer/> }/>
                             <Route path="/news" element={ <News/> }/>
                             <Route path="/music" element={ <Music/> }/>
                             <Route path="/settings" element={ <Settings/> }/>

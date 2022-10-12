@@ -2,10 +2,6 @@ import React from 'react';
 import classes from './NavBar.module.css';
 import { NavLink } from 'react-router-dom';
 import { getClassName } from './utils';
-import DialogItem from '../Dialogs/DialogItem/DialogItem';
-import FriendItem from '../My friends/FriendItem/FriendItem';
-import MyFriends from '../My friends/MyFriends';
-
 
 const NavBar = (props) => {
     return (
@@ -17,6 +13,10 @@ const NavBar = (props) => {
             <div className={ classes.navItem }>
                 <NavLink to='/dialogs'
                          className={ getClassName }>Messages</NavLink>
+            </div>
+            <div className={ classes.navItem }>
+                <NavLink to='/users'
+                         className={ getClassName }>Users</NavLink>
             </div>
             <div className={ classes.navItem }>
                 <NavLink to='/news'
